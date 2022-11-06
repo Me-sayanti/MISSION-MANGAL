@@ -1,0 +1,549 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Samsung</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+    <!-- <link rel="stylesheet" href="css/animate.css"> -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- <link rel="stylesheet" href="css/owl.carousel.min1.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min1.css"> -->
+    <link rel="stylesheet" href="css/style_float.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+      // You can also use "$(window).load(function() {"
+      $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+          auto: true,
+          pager: false,
+          nav: true,
+          speed: 500,
+          namespace: "callbacks"
+        });
+  
+      });
+    </script>
+    <!-- for lightbox -->
+    <script src="js/lightbox.min.js"></script>
+    <!-- for floatting element -->
+    <script src="js/jqfloat.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            //vendor script
+            $('header')
+            .css({ 'top':-70 })
+            .delay(500)
+            .animate({'top': 0}, 800);
+            
+            $('footer')
+            .css({ 'bottom':-40 })
+            .delay(500)
+            .animate({'bottom': 0}, 800);
+            
+            //jqfloat.js script
+            $('.cloud').each(function() {
+                $(this).jqFloat({
+                    width:Math.floor(Math.random()*10)*10,
+                    height:10,
+                    speed:Math.floor(Math.random()*10)*100 + 500
+                });
+            });	
+            $('#sun').jqFloat({
+                width:10,
+                height:50,
+                speed:1800
+            });
+            $('.butterfly').jqFloat({
+                width:400,
+                height:100,
+                speed:1500
+            });
+            $('#snail, #message').jqFloat('stop',{
+                width:5,
+                height:0,
+                speed:30
+            });
+            $('#snail, #message').hover(function() {
+                $(this).jqFloat('play');
+            }, function() {
+                $(this).jqFloat('stop');
+            });
+            
+            var clicked = false;
+            //define balloon attribute
+            $('#balloon').jqFloat('stop',{
+                width:5,
+                height:30,
+                speed:1500,
+                minHeight:300
+            });
+            $('#balloon').on('click', function() {
+                clicked = !clicked;
+                if(clicked)
+                    $(this).jqFloat('play');
+                else 
+                    $(this).jqFloat('stop');
+            });
+            $('#social').jqFloat({
+                width: 10,
+                height: 10,
+                speed: 1500
+            });
+        });
+        </script>
+        <!-- for craousel -->
+        <script src="js/owl.carousel.min.js"></script>
+        <script>
+            $(document).ready(function() {
+              $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                  0: {
+                    items: 2,
+                    nav: true,
+                    autoplay:true,
+                    autoplayTimeout:1000,
+                    autoplayHoverPause:true,
+                  },
+                  600: {
+                    items: 3,
+                    nav: false,
+                    autoplay:true,
+                    autoplayTimeout:1000,
+                    autoplayHoverPause:true,
+                  },
+                  900: {
+                    items: 4,
+                    nav: true,
+                    autoplay:true,
+                    autoplayTimeout:1000,
+                    margin: 20,
+                    autoplayHoverPause:true,
+                  }
+                }
+              })
+            })
+          </script>
+          <script>
+            $(document).ready(function() {
+              $('.owl-carousel1').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                  0: {
+                    items: 2,
+                    nav: true,
+                    autoplay:true,
+                    autoplayTimeout:1000,
+                    autoplayHoverPause:true,
+                  },
+                 900: {
+                    items: 3,
+                    nav: false,
+                    autoplay:true,
+                    autoplayTimeout:1000,
+                    autoplayHoverPause:true,
+                  },
+                //   900: {
+                //     items: 4,
+                //     nav: true,
+                //     autoplay:true,
+                //     autoplayTimeout:1000,
+                //     margin: 20,
+                //     autoplayHoverPause:true,
+                //   }
+                }
+              })
+            })
+          </script>
+          <script src="js/wow.min.js"></script>
+          <script>
+            wow = new WOW(
+              {
+                animateClass: 'animated',
+                offset:       100,
+                callback:     function(box) {
+                  console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+              }
+            );
+            wow.init();
+            document.getElementById('moar').onclick = function() {
+              var section = document.createElement('section');
+              section.className = 'section--purple wow fadeInDown';
+              this.parentNode.insertBefore(section, this);
+            };
+          </script>
+</head>
+<body>
+   <header>
+       <div class="container">
+           <div class="col">
+               <a href=""><img src="images/samsung logo.png" alt="samsung logo"></a>
+           </div>
+           <div class="col">
+              <form action="">
+                  <input type="text" placeholder="search....">
+              </form>
+           </div>
+           <div class="clr"></div>
+       </div>
+   </header>
+    <nav>
+       <div class="container">
+           <ul>
+               <li><a href="">Home</a></li>
+               <li><a href="">About Us</a></li>
+               <li><a href="">Products</a></li>
+               <li><a href="">Services</a></li>
+               <li><a href="">Blog</a></li>
+               <li><a href="">Contact Us</a></li>
+           </ul>
+       </div>
+   </nav>
+   <div id="sky">
+    <div id="cloud1" class="cloud"></div>
+    <div id="cloud2" class="cloud"></div>
+    <div id="cloud3" class="cloud"></div>
+    <div id="cloud4" class="cloud"></div>
+    <div id="sun"></div>
+</div>
+<div id="ground">
+    <div id="snail"></div>
+    <div id="message">Don't touch me!!!</div>
+    <div id="fly1" class="butterfly"></div>
+    <div id="fly2" class="butterfly"></div>
+</div>
+<div id="balloon"></div>
+   <div class="callbacks_container">
+    <ul class="rslides" id="slider4">
+      <li>
+        <img src="images/banner.jpg "alt="">
+        <p class="caption">This is a caption</p>
+      </li>
+      <li>
+        <img src="images/banner.jpg" alt="">
+        <p class="caption">This is another caption</p>
+      </li>
+      <li>
+        <img src="images/banner.jpg" alt="">
+        <p class="caption">The third caption</p>
+      </li>
+    </ul>
+  </div>
+   
+   <!-- <section class="banner">
+       <div class="container">
+           <div class="col">
+               <h1>Unbox Your Phone</h1>
+           </div>
+       </div>
+   </section> -->
+   
+
+   <section class="secproduct">
+       <div class="container">
+           <h2 >Featured <span>Products</span></h2>
+           <div class="row">
+            <div class="col">
+            <div class="productbox">
+                <div class="productpic">
+                    <!-- <img src="images/phone_image.png" alt=""> -->
+                    <a class="example-image-link" href="images/phone_image_big.png" data-lightbox="example-set"
+                     data-title="Click the right half of the image to move forward.">
+                    <img class="example-image" src="images/phone_image.png" alt=""/></a>
+                </div>
+                 <div class="productinfo">
+                <h3>SAMSUNG A3 16GB</h3>
+                <div class="col"><p>$300.00</p></div>
+                <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                <div class="clr"></div>
+                 </div>
+            </div>
+           
+           </div>
+           <div class="col">
+            <div class="productbox">
+                <div class="productpic">
+                    <!-- <img src="images/phone_image.png" alt=""> -->
+                    <a class="example-image-link" href="images/phone_image_big.png" data-lightbox="example-set"
+                    data-title="Click the right half of the image to move forward.">
+                   <img class="example-image" src="images/phone_image.png" alt=""/></a>
+                </div>
+                 <div class="productinfo">
+                <h3>SAMSUNG A3 16GB</h3>
+                <div class="col"><p>$300.00</p></div>
+                <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                <div class="clr"></div>
+                 </div>
+            </div>
+           </div>
+           <div class="col">
+            <div class="productbox">
+                <div class="productpic">
+                    <!-- <img src="images/phone_image.png" alt=""> -->
+                    <a class="example-image-link" href="images/phone_image_big.png" data-lightbox="example-set"
+                    data-title="Click the right half of the image to move forward.">
+                   <img class="example-image" src="images/phone_image.png" alt=""/></a>
+                </div>
+                 <div class="productinfo">
+                <h3>SAMSUNG A3 16GB</h3>
+                <div class="col"><p>$300.00</p></div>
+                <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                <div class="clr"></div>
+                 </div>
+            </div>
+           </div>
+           <div class="clr"></div>
+        </div>
+    
+       </div>
+   </section>
+    
+<section class="innerbanner">
+     <h3>Lorem Ipsum</h3>
+     <h4> Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using <br>'Content here, content here'</h4>
+     <p class="text-center"><a href="" class="btbuynow">Buy Now</a></p>
+ </section>
+ <section class="secproduct">
+    <div class="container">
+        <h2 class="wow fadeInDown">Upcoming <span>Products</span></h2>
+        <div class="row">
+            <div class="owl-carousel owl-theme margin-top">
+                <div class="item">
+                  <h4> <div class="productbox">
+                    <div class="productpic">
+                        <img src="images/phone_image.png" alt="">
+                    </div>
+                     <div class="productinfo">
+                    <h3>SAMSUNG A3 16GB</h3>
+                    <div class="col"><p>$300.00</p></div>
+                    <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                    <div class="clr"></div>
+                     </div>
+                </div></h4>
+                </div>
+                <div class="item">
+                  <h4> <div class="productbox">
+                    <div class="productpic">
+                        <img src="images/phone_image.png" alt="">
+                    </div>
+                     <div class="productinfo">
+                    <h3>SAMSUNG A3 16GB</h3>
+                    <div class="col"><p>$300.00</p></div>
+                    <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                    <div class="clr"></div>
+                     </div>
+                </div></h4>
+                </div>
+                <div class="item">
+                  <h4> <div class="productbox">
+                    <div class="productpic">
+                        <img src="images/phone_image.png" alt="">
+                    </div>
+                     <div class="productinfo">
+                    <h3>SAMSUNG A3 16GB</h3>
+                    <div class="col"><p>$300.00</p></div>
+                    <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                    <div class="clr"></div>
+                     </div>
+                </div></h4>
+                </div>
+                <div class="item">
+                  <h4> <div class="productbox">
+                    <div class="productpic">
+                        <img src="images/phone_image.png" alt="">
+                    </div>
+                     <div class="productinfo">
+                    <h3>SAMSUNG A3 16GB</h3>
+                    <div class="col"><p>$300.00</p></div>
+                    <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                    <div class="clr"></div>
+                     </div>
+                </div></h4>
+                </div>
+                <div class="item">
+                    <h4> <div class="productbox">
+                      <div class="productpic">
+                          <img src="images/phone_image.png" alt="">
+                      </div>
+                       <div class="productinfo">
+                      <h3>SAMSUNG A3 16GB</h3>
+                      <div class="col"><p>$300.00</p></div>
+                      <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                      <div class="clr"></div>
+                       </div>
+                  </div></h4>
+                  </div>
+                
+              </div>
+         <!-- <div class="col"> 
+         <div class="productbox">
+             <div class="productpic">
+                 <img src="images/phone_image.png" alt="">
+             </div>
+              <div class="productinfo">
+             <h3>SAMSUNG A3 16GB</h3>
+             <div class="col"><p>$300.00</p></div>
+             <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+             <div class="clr"></div>
+              </div>
+         </div>
+        
+        </div>
+        <div class="col">
+         <div class="productbox">
+             <div class="productpic">
+                 <img src="images/phone_image.png" alt="">
+             </div>
+              <div class="productinfo">
+             <h3>SAMSUNG A3 16GB</h3>
+             <div class="col"><p>$300.00</p></div>
+             <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+             <div class="clr"></div>
+              </div>
+         </div>
+        </div>
+        <div class="col">
+         <div class="productbox">
+             <div class="productpic">
+                 <img src="images/phone_image.png" alt="">
+             </div>
+              <div class="productinfo">
+             <h3>SAMSUNG A3 16GB</h3>
+             <div class="col"><p>$300.00</p></div>
+             <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+             <div class="clr"></div>
+              </div>
+         </div>
+        </div>
+        <div class="clr"></div>
+     </div> -->
+ 
+    <!-- </div> -->
+</section>
+<section class="secproduct">
+    <div class="container">
+        <h2 class="wow fadeInDown">spacial <span>Products</span></h2>
+        <div class="row">
+            <div class="owl-carousel1 owl-theme">
+                <div class="item">
+                  <h4> <div class="productbox">
+                    <div class="productpic">
+                        <img src="images/phone_image.png" alt="">
+                    </div>
+                     <div class="productinfo">
+                    <h3>SAMSUNG A3 16GB</h3>
+                    <div class="col"><p>$300.00</p></div>
+                    <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                    <div class="clr"></div>
+                     </div>
+                </div></h4>
+                </div>
+                <div class="item">
+                  <h4> <div class="productbox">
+                    <div class="productpic">
+                        <img src="images/phone_image.png" alt="">
+                    </div>
+                     <div class="productinfo">
+                    <h3>SAMSUNG A3 16GB</h3>
+                    <div class="col"><p>$300.00</p></div>
+                    <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                    <div class="clr"></div>
+                     </div>
+                </div></h4>
+                </div>
+                <div class="item">
+                    <h4> <div class="productbox">
+                      <div class="productpic">
+                          <img src="images/phone_image.png" alt="">
+                      </div>
+                       <div class="productinfo">
+                      <h3>SAMSUNG A3 16GB</h3>
+                      <div class="col"><p>$300.00</p></div>
+                      <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                      <div class="clr"></div>
+                       </div>
+                  </div></h4>
+                  </div>
+                <div class="item">
+                    <h4> <div class="productbox">
+                      <div class="productpic">
+                          <img src="images/phone_image.png" alt="">
+                      </div>
+                       <div class="productinfo">
+                      <h3>SAMSUNG A3 16GB</h3>
+                      <div class="col"><p>$300.00</p></div>
+                      <div class="col"><p class="text-right"><a href="" class="btbuynow">Buy Now</a></p></div>
+                      <div class="clr"></div>
+                       </div>
+                  </div></h4>
+                  </div>
+              </div>
+</section>
+<footer>
+    <div class="container">
+         <div class="col">
+             <ul>
+                  <li><a href=""><img src="images/samsung logo_footer.png" alt="samsung logo"></a></li>
+                <br>
+                <li><a href="">using Lorem Ipsum is that it<br>has a more-or-less normal <br>distribution  letters,
+                     as</a></li>
+                    </ul>
+               
+       
+        
+    </div>
+    <div class="col">
+        <h4>MAIN MENU</h4>
+        
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <h4>QUICK MENU</h4>
+        
+        <ul>
+            <li><a href="">Sitemap</a></li>
+            <li><a href="">Terms & Conditions</a></li>
+            <li><a href="">Privacy policy</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <h4>CONTACT US</h4>
+        
+        <ul>
+                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="">8777586184</a></li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="">info@gmail.com</a></li>
+            <li><i class="fa fa-map-marker" aria-hidden="true"></i><a href="">C/28, amarabati,sodepur<br>kol-700110</a></li>
+        </div></div>
+         
+           
+        </ul>
+    </div>
+    <DIV CLASS="clr"></DIV></div>
+   
+</footer>
+ <section class="end">
+    <h4>© 2021 samsung.com | All Rights Reserved</h4>
+</section>
+</body>
+</html>
